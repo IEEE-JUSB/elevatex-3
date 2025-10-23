@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import ieeeLogo from "./ieee.svg";
 
 import {
@@ -18,7 +20,7 @@ function ElevatexFooter() {
         
         <div className="w-auto mb-10 md:mb-0">
           <div className="text-center mb-4">
-            <img src={ieeeLogo} alt="IEEE JUSB Logo" width={320} className="mx-auto" />
+            <Image src={ieeeLogo} alt="IEEE JUSB Logo" width={320} height={120} className="mx-auto" />
           </div>
           <p className="w-80 text-justify leading-relaxed">
             The Jadavpur University IEEE Student Branch, founded in 2010, belongs to the Kolkata section.
@@ -30,12 +32,12 @@ function ElevatexFooter() {
         <div className="w-auto hidden md:block">
           <h2 className="font-bold mb-3 text-xl text-white">Useful Links</h2>
           <div className="space-y-2">
-            <a href="/" className="block hover:underline transition">&gt; Home</a>
-            <a href="/about" className="block hover:underline transition">&gt; About</a>
-            <a href="/events" className="block hover:underline transition">&gt; Events</a>
-            <a href="/contact" className="block hover:underline transition">&gt; Contact</a>
-            <a href="/speakers" className="block hover:underline transition">&gt; Speakers</a>
-            <a href="/schedule" className="block hover:underline transition">&gt; Schedule</a>
+            <Link href="/" className="block hover:underline transition">&gt; Home</Link>
+            <Link href="/about" className="block hover:underline transition">&gt; About</Link>
+            <Link href="/events" className="block hover:underline transition">&gt; Events</Link>
+            <Link href="/contact" className="block hover:underline transition">&gt; Contact</Link>
+            <Link href="/speakers" className="block hover:underline transition">&gt; Speakers</Link>
+            <Link href="/schedule" className="block hover:underline transition">&gt; Schedule</Link>
           </div>
         </div>
 
