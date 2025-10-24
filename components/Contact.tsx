@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="flex flex-col items-center text-center py-16 px-6 bg-white">
+    <section id="contact" className="flex flex-col items-center text-center py-16 px-6 bg-white">
       <h1 className="text-4xl md:text-5xl font-bold mb-3">Contact Us</h1>
       <p className="text-gray-600 mb-10 text-sm md:text-base max-w-md">
         Feel free to contact us anytime regarding any query.

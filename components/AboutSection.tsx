@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function AboutSection() {
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20 lg:py-28 font-syne">
+    <section id='about' className="bg-white py-12 sm:py-16 md:py-20 lg:py-28 font-syne">
       <div className="container mx-auto px-6 lg:px-8">
         
         {/* Headline & Description */}
