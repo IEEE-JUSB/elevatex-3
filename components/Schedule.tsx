@@ -14,7 +14,7 @@ const seminars = [
 
 export default function Schedule() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 px-8 py-12">
+    <div id='schedule' className="min-h-screen bg-white text-gray-800 px-8 py-12">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold">

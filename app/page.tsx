@@ -6,10 +6,12 @@ import AboutSection from "../components/AboutSection";
 import CountdownSection from "../components/CountdownSection";
 import Register from "../components/Register";
 import Login from "../components/Login";
+import HeroSection from "@/components/HeroSection";
 
 export default async function Home() {
   return (
     <div>
+      <HeroSection />
       <AboutSection />
       <Login />
       <CountdownSection />
