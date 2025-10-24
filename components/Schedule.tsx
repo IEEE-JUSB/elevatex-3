@@ -21,7 +21,7 @@ export default function Schedule() {
           ElevateX 2.0 <span className="text-blue-600">Webinars</span>
         </h1>
         <p className="italic text-gray-500 mt-2">
-          “Lorem ipsum dolor sit amet conse.”
+          &ldquo;Lorem ipsum dolor sit amet conse.&rdquo;
         </p>
       </div>
 
