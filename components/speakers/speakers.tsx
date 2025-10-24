@@ -31,7 +31,7 @@ const Speakers: React.FC = () => {
   ];
 
   return (
-    <div>
+    <div id="speakers">
       <h1 className="w-full text-center text-6xl font-extrabold mt-3">
         SPEAKERS
       </h1>
