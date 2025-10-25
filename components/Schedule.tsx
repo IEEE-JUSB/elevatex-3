@@ -14,14 +14,14 @@ const seminars = [
 
 export default function Schedule() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 px-8 py-12">
+    <div id='schedule' className="min-h-screen bg-white text-gray-800 px-8 py-12">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold">
           ElevateX 2.0 <span className="text-blue-600">Webinars</span>
         </h1>
         <p className="italic text-gray-500 mt-2">
-          “Lorem ipsum dolor sit amet conse.”
+          &ldquo;Lorem ipsum dolor sit amet conse.&rdquo;
         </p>
       </div>
 
