@@ -1,6 +1,6 @@
 import { defineConfig, env } from "prisma/config";
 
-if(process.env.NODE_ENV !== "production") process.loadEnvFile();
+// if(process.env.NODE_ENV !== "production") process.loadEnvFile();
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
