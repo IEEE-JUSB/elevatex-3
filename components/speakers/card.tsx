@@ -1,37 +1,29 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-// import linkedinIcon from "../assets/linkedin.svg";
 
 interface CardProps {
   image: string;
   name: string;
-  designation: string;
-  linkedin: string;
+  url: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, name, designation, linkedin }) => (
-  <div className="border border-red rounded-lg pt-4 w-full max-w-xs md:max-w-sm lg:max-w-md shadow-md text-center flex-1 hover:scale-105 transition-transform duration-300 origin-center">
-    <img
+const Card: React.FC<CardProps> = ({ image, name, url }) => (
+  <div className="rounded-2xl w-full aspect-square max-w-xs md:max-w-sm lg:max-w-md relative">
+    <Image
+      width={500}
+      height={500}
       src={image}
       alt={name}
-      className="w-[92%] rounded-md object-cover mb-3 mx-auto"
+      className="w-full h-auto rounded-2xl mb-3 mx-auto absolute"
     />
-    <h3 className="mt-2 mb-1 text-4xl uppercase">{name}</h3>
-    <p className="text-white mb-3 font-bold text-xl pt-1">{designation}</p>
-    <a
-      href={linkedin}
+    <Link
+      href={url}
       target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-700 font-bold hover:underline"
+      className="text-white text-lg font-syne font-bold absolute bottom-5 left-1/2 -translate-x-1/2"
     >
-      <div className="w-10 h-10 align-middle mx-auto mb-3">
-        <img
-          src={'linkedin.svg'}
-          alt="LinkedIn"
-          style={{ filter: "invert(1)" }}
-          className="w-8 mx-auto mb-3 hover:w-9 transition-all duration-300 hover:brightness-0 hover:invert"
-        />
-      </div>
-    </a>
+      {name}
+    </Link>
   </div>
 );
 

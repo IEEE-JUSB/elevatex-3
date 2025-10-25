@@ -25,13 +25,13 @@ export default function Sponsors() {
   return (
     <section aria-labelledby="sponsors-heading" className={`py-8 w-full`}>
       <div className="w-full mx-auto px-6">
-        <h2 id="sponsors-heading" className="text-center text-3xl sm:text-4xl font-semibold mb-6">
+        <h2 id="sponsors-heading" className="text-center text-3xl sm:text-4xl md:text-6xl font-syne font-semibold mb-6">
           Meet Our Sponsors
         </h2>
 
         <div className="relative overflow-hidden">
           <motion.div
-            className="w-full flex justify-between items-center whitespace-nowrap bg-red-600"
+            className="w-full flex justify-between items-center whitespace-nowrap"
             initial={{ x: "0%" }}
             animate={{ x: ["-0%", "-100%"] }}
             transition={{

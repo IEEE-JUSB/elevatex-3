@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useState, FC } from 'react';
 
 type NavItem = string;
 
 const HeroSection: FC = () => {
-  const navItems: NavItem[] = ['Home', 'About', 'Events', 'Contact', 'Speakers', 'Schedule'];
+  const navItems: NavItem[] = ['Home', 'About', 'Contact', 'Speakers', 'Schedule'];
   const [activeDot, setActiveDot] = useState(0);
   const handleNavClick = (item: NavItem): void => {
     console.log(`Navigating to ${item}`);
@@ -17,7 +18,7 @@ const HeroSection: FC = () => {
   };
 
   return (
-    <div id='home' className="min-h-screen bg-gray-50 font-sans antialiased text-gray-800 overflow-hidden">
+    <div id='home' className="min-h-screen bg-gradient-to-bl from-blue-300 via-white to-gray-300 font-sans antialiased text-gray-800 overflow-hidden">
       <div
         className="absolute inset-0 z-0 opacity-70"
         style={{
@@ -28,7 +29,7 @@ const HeroSection: FC = () => {
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="flex justify-between items-center py-6 md:py-8">
           <div className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">
-            ElevateX <span className="text-blue-600">2.0</span>
+            ElevateX <span className="text-blue-600">3.0</span>
           </div>
           <nav className="hidden lg:flex items-center space-x-8 xl:space-x-10 text-lg font-medium font-syne">
             {navItems.map((item: NavItem) => (
@@ -42,11 +43,11 @@ const HeroSection: FC = () => {
               </a>
             ))}
           </nav>
-          <button
+          <Link href={"/register"}
             className="px-6 py-2 bg-gray-900 text-white font-semibold rounded-xl shadow-lg hover:bg-sky-600 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-sky-300 focus:ring-opacity-50 text-base md:text-lg"
           >
             Register Now
-          </button>
+          </Link>
         </header>
         <main className="mt-16 md:mt-24 lg:mt-32 pb-20 grid lg:grid-cols-2 gap:10 lg:gap-140 items-center font-syne">
           <div className="flex flex-col items-left text-center lg:items-start lg:text-left"> 
@@ -54,17 +55,17 @@ const HeroSection: FC = () => {
               Witness the Future of Innovation
             </p>
             <div className="wow animate__animated animate__fadeInLeft">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-tight">
-                <div className="lg:text-left text-center"><span className="text-blue-600">ElevateX 2.0</span></div>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900">
+                <div className="lg:text-left text-center"><span className="text-blue-600">ElevateX 3.0</span></div>
                 <div className="lg:text-left text-center">Beyond</div>
                 <div className="lg:text-left text-center">Boundaries</div>
               </h1>
             </div>
-            <button
+            <Link href={"/register"}
               className="mt-10 px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 text-lg md:text-xl"
             >
               Register Now
-            </button>
+            </Link>
           </div>
           <div className="flex flex-col items-center lg:items-end mt-16 lg:mt-0">
             <div className="w-full max-w-sm sm:max-w-md bg-white rounded-[30px] shadow-2xl transition-all duration-500 ease-in-out transform hover:shadow-sky-300/50 overflow-hidden relative">

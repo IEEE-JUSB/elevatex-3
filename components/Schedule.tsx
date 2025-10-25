@@ -1,64 +1,58 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 const seminars = [
-  { title: 'AI/ML Seminar', img: '/speaker.png' },
-  { title: 'Higher Studies Seminar', img: '/speaker.png' },
-  { title: 'WEB3 Seminar', img: '/speaker.png' },
-  { title: 'Data Analytics Seminar', img: '/speaker.png' },
-  { title: 'IoT Seminar', img: '/speaker.png' },
-  { title: 'Telecom Security Seminar', img: '/speaker.png' },
-  { title: 'CP Seminar', img: '/speaker.png' },
-  { title: 'MBA Seminar', img: '/speaker.png' }
+  { title: "Higher Education", img: "/speaker.png", speaker:"Jamboree", date: "29/10/2025", timing: "7:00pm to 8:00pm" },
+  { title: "Common Aptitude Test (CAT)", img: "/speaker.png", speaker:"Soumyadeep Pal", date: "1/11/2025", timing: "TBD" },
+  { title: "Resume Building", img: "/speaker.png", speaker:"Sayandeep Sarkar", date: "2/11/2025", timing: "TBD" },
+  { title: "Data Analytics and Consultancy", img: "/speaker.png", speaker:"Rahul Halder", date: "8/11/2025", timing: "TBD" },
+  { title: "Open Source", img: "/speaker.png", speaker:"Chirag Agarwal", date: "15/11/2025", timing: "TBD" },
 ];
 
 export default function Schedule() {
   return (
-    <div id='schedule' className="min-h-screen bg-white text-gray-800 px-8 py-12">
+    <div
+      id="schedule"
+      className="min-h-screen bg-white text-gray-800 px-8 py-12 mt-6"
+    >
       {/* Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold">
-          ElevateX 2.0 <span className="text-blue-600">Webinars</span>
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-6xl font-syne font-bold">
+          ElevateX 3.0 - <span className="text-blue-600">Schedule</span>
         </h1>
-        <p className="italic text-gray-500 mt-2">
-          &ldquo;Lorem ipsum dolor sit amet conse.&rdquo;
-        </p>
       </div>
 
-      {/* Blue Divider */}
-      <div className="w-full h-1 bg-blue-500 mb-10"></div>
-
       {/* Seminar Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 gap-10 max-w-6xl xl:max-w-4xl mx-auto font-syne">
         {seminars.map((seminar, index) => (
           <div
             key={index}
-            className="flex flex-col border-b border-gray-200 pb-6"
+            className="flex justify-between items-center w-full border-b border-gray-200 pb-6 gap-x-4"
           >
             {/* Speaker Detail Row */}
-            <div className="flex items-center gap-4 mb-3">
-              <Image
-                src={seminar.img}
-                alt={seminar.title}
-                width={60}
-                height={60}
-                className="rounded-full object-cover"
-              />
+            <div className="flex flex-col items-center gap-4 mb-3 font-sans">
               <div>
-                <p className="text-blue-600 text-sm font-medium">Oct 25, 2025</p>
-                <p className="text-lg font-semibold text-gray-800">11:00 - 1:00</p>
-                <p className="text-lg font-bold text-gray-900">Aarav Mehta</p>
+                <p className="text-blue-600 text-sm sm:text-lg font-syne font-medium">
+                  {seminar.date}
+                </p>
+                <p className="text-sm sm:text-xl font-semibold text-gray-800">
+                  {seminar.timing}
+                </p>
               </div>
             </div>
 
             {/* Seminar Info */}
-            <div>
-              <h3 className="font-bold text-lg mb-1">{seminar.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.
-                Aliquam in hendrerit. Sit amet consectetur adipiscing elit.
-              </p>
+            <div className="flex flex-col text-right">
+              <h3 className="font-bold text-lg sm:text-3xl mb-1">{seminar.title}</h3>
+              <p className="sm:text-lg font-bold text-gray-600">by {seminar.speaker}</p>
             </div>
+            {/* <Image
+              src={seminar.img}
+              alt={seminar.title}
+              width={80}
+              height={80}
+              className="rounded-full object-cover aspect-square"
+            /> */}
           </div>
         ))}
       </div>

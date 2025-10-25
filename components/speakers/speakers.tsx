@@ -4,8 +4,7 @@ import Card from "./card";
 interface Speaker {
   image: string;
   name: string;
-  designation: string;
-  linkedin: string;
+  url: string;
 }
 
 const Speakers: React.FC = () => {
@@ -13,38 +12,34 @@ const Speakers: React.FC = () => {
     {
       image: "/don.webp",
       name: "Krishna",
-      designation: "Chief in Charge",
-      linkedin: "https://www.google.com",
+      url: "https://www.google.com",
     },
     {
       image: "/don.webp",
       name: "Krishna",
-      designation: "Chief in Charge",
-      linkedin: "https://www.google.com",
+      url: "https://www.google.com",
     },
     {
       image: "/don.webp",
       name: "Krishna",
-      designation: "Chief in Charge",
-      linkedin: "https://www.google.com",
+      url: "https://www.google.com",
     },
   ];
 
   return (
-    <div id="speakers">
-      <h1 className="w-full text-center text-6xl font-extrabold mt-3">
-        SPEAKERS
+    <div id="speakers" className="min-h-screen">
+      <h1 className="w-full text-center text-6xl font-bold mt-3 font-syne">
+        Speakers
       </h1>
 
-      <div className="flex justify-center items-center min-h-screen w-full p-4 box-border">
-        <div className="grid gap-4 w-full max-w-7xl sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+      <div className="flex justify-center items-center w-full min-h-[50vh] p-4 box-border mt-12">
+        <div className="grid gap-4 w-full xl:w-4/5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {speakers.map((speaker, idx) => (
             <Card
               key={idx}
               image={speaker.image}
               name={speaker.name}
-              designation={speaker.designation}
-              linkedin={speaker.linkedin}
+              url={speaker.url}
             />
           ))}
         </div>

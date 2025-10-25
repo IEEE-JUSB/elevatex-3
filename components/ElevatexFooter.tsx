@@ -16,7 +16,7 @@ import {
 function ElevatexFooter() {
   return (
     <>
-      <div className="bg-gradient-to-b from-blue-700 to-blue-900 text-white w-full p-10 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-around text-lg space-y-10 md:space-y-0">
+      <div className="bg-gradient-to-b from-blue-700 to-blue-900 text-white w-full p-10 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-around md:text-lg space-y-10 md:space-y-0 font-syne">
         
         <div className="w-auto mb-10 md:mb-0">
           <div className="text-center mb-4">
@@ -31,19 +31,19 @@ function ElevatexFooter() {
         
         <div className="w-auto hidden md:block">
           <h2 className="font-bold mb-3 text-xl text-white">Useful Links</h2>
-          <div className="space-y-2">
-            <Link href="/" className="block hover:underline transition">&gt; Home</Link>
-            <Link href="/about" className="block hover:underline transition">&gt; About</Link>
-            <Link href="/events" className="block hover:underline transition">&gt; Events</Link>
-            <Link href="/contact" className="block hover:underline transition">&gt; Contact</Link>
-            <Link href="/speakers" className="block hover:underline transition">&gt; Speakers</Link>
-            <Link href="/schedule" className="block hover:underline transition">&gt; Schedule</Link>
+          <div className="space-y-2 font-medium">
+            <Link href="/" className="flex items-center gap-x-2 hover:text-blue-300 transition-colors duration-150"><span>&gt;</span> Home</Link>
+            <Link href="/#about" className="flex items-center gap-x-2 hover:text-blue-300 transition-colors duration-150"><span>&gt;</span> About</Link>
+            <Link href="/#contact" className="flex items-center gap-x-2 hover:text-blue-300 transition-colors duration-150"><span>&gt;</span> Contact</Link>
+            <Link href="/#speakers" className="flex items-center gap-x-2 hover:text-blue-300 transition-colors duration-150"><span>&gt;</span> Speakers</Link>
+            <Link href="/#schedule" className="flex items-center gap-x-2 hover:text-blue-300 transition-colors duration-150"><span>&gt;</span> Schedule</Link>
+            <Link href="/dashboard" className="flex items-center gap-x-2 hover:text-blue-300 transition-colors duration-150"><span>&gt;</span> Register</Link>
           </div>
         </div>
 
-        <div className="w-auto px-6">
+        <div className="w-auto md:px-6">
           <h2 className="font-bold mb-3 text-xl text-white">Contact Us</h2>
-          <div className="flex items-start gap-2 mb-2">
+          <div className="flex items-start gap-2 mb-2 font-medium">
             <FaMapLocationDot className="mt-1" />
             <span>
               Jadavpur University, 188 Raja S.C. Mallick Rd, <br />
@@ -78,8 +78,8 @@ function ElevatexFooter() {
         </div>
       </div>
 
-      <div className="border-t border-white flex w-full justify-center bg-blue-900">
-        <p className="text-white text-lg font-Poppins p-3 text-center">
+      <div className="flex w-full justify-center bg-blue-900">
+        <p className="text-white p-3 text-center font-syne border-t border-t-white/70 w-full sm:w-4/5">
           Made with &#10084; by IEEE JUSB
         </p>
       </div>

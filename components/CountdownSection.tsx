@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Define the target date for the countdown
-const TARGET_DATE = new Date('November 12, 2025 00:00:00'); // November 12, 2025
+const TARGET_DATE = new Date('October 29, 2025 00:00:00'); // October 29, 2025
 
 interface TimeLeft {
   days: number;

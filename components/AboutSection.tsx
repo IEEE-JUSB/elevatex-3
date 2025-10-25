@@ -24,7 +24,7 @@ export default function AboutSection() {
           <div className="w-full lg:w-1/2 lg:ml-auto mt-6 md:mt-8">
             <div className="wow animate__animated animate__fadeInRight">
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed font-semibold text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis.
+                ElevateX is an all-in-one mentoring session by IEEE JUSB. Be it research or industry, be it competitive coding, electronics or soft skill development, we have tracks tailor-made for your needs, complete with doubt-clearing, quick contests, real-world problems and webinars by field experts.
               </p>
             </div>
           </div>
