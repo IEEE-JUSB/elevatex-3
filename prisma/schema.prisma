@@ -15,18 +15,32 @@ datasource db {
 }
 
 model User {
-  id            String    @id
-  name          String
-  email         String
-  emailVerified Boolean   @default(false)
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @default(now()) @updatedAt
-  sessions      Session[]
-  accounts      Account[]
+  id               String    @id @default(uuid())
+  name             String
+  email            String
+  emailVerified    Boolean   @default(false)
+  image            String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @default(now()) @updatedAt
+  role             String
+  college          String
+  year             String
+  department       String
+  phone            String
+  registeredEvents Event[]
+  sessions         Session[]
+  accounts         Account[]
 
   @@unique([email])
   @@map("user")
+}
+
+model Event {
+  id                   String   @id @default(uuid())
+  name                 String
+  registrations        User[]
+  eventDate            DateTime
+  eventUrl             String?
 }
 
 model Session {

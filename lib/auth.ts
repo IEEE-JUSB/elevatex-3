@@ -8,5 +8,14 @@ export const auth = betterAuth({
     }),
     emailAndPassword: {
         enabled: true
+    },
+    user: {
+        additionalFields: {
+            role: {type: "string"},
+            year: {type: "string"},
+            department: {type: "string"},
+            college: {type: "string"},
+            phone: {type: "string"}
+        }
     }
 });

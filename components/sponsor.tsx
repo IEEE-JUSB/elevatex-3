@@ -13,8 +13,8 @@ export type Sponsor = {
 const sponsors: Sponsor[] = [
   {
     id: "1",
-    name: "Sponsor",
-    src: "/sponsors/nvidia.png"
+    name: "Jamboree",
+    src: "/sponsors/jamboree-logo.png"
   }
 ];
 
@@ -31,7 +31,7 @@ export default function Sponsors() {
 
         <div className="relative overflow-hidden">
           <motion.div
-            className="w-full flex justify-between items-center whitespace-nowrap"
+            className="w-full flex justify-between items-center whitespace-nowrap gap-x-20"
             initial={{ x: "0%" }}
             animate={{ x: ["-0%", "-100%"] }}
             transition={{

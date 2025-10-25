@@ -1,15 +1,34 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
+import { signIn } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [status, setStatus] = useState("");
 
   const handleSubmit = () => {
-    console.log("Login submitted:", formData);
-    alert("Login successful!");
+    signIn.email({
+      email: formData.email,
+      password: formData.password,
+      callbackURL: "/dashboard"
+    },{
+      onRequest: () => {
+        setStatus("Loading...");
+      },
+      onSuccess: () => {
+        setStatus("Logged in successfully!");
+        redirect("/dashboard")
+      },
+      onError: () => {
+        setStatus("Error occurred. Please check credentials.")
+      }
+    })
   };
 
   const handleChange = (field: string, value: string) => {
@@ -21,8 +40,10 @@ export default function LoginPage() {
 
   return (
       <div className="sm:min-h-screen flex flex-col md:flex-row">
-        {/* Left Section - Form */}
-        <div className="md:w-1/2 bg-gradient-to-br from-blue-300 to-blue-400 p-12 flex flex-col justify-center">
+        <div className="w-full bg-gradient-to-br from-blue-300 to-blue-400 p-12 pt-0 flex flex-col items-center justify-around">
+          <Link href={"/"}>
+            <Image src={"/elevatex-logo.png"} alt="ElevateX 3.0 Logo" height={200} width={400} className="aspect-video object-cover" />
+          </Link>
           <div className="max-w-md mx-auto w-full font-syne">
             <h1 className="text-5xl font-bold text-gray-900 mb-2">
               Step into the
@@ -61,6 +82,8 @@ export default function LoginPage() {
                 />
               </div>
 
+              <p className="text-white">{status}</p>
+
               {/* Login Button */}
               <div className="pt-4">
                 <button
@@ -82,16 +105,11 @@ export default function LoginPage() {
         </div>
 
         {/* Right Section - Random Image Text */}
-        <div className="hidden sm:flex sm:w-1/2 bg-gray-200 items-center justify-center">
+        {/* <div className="hidden sm:flex sm:w-1/3 bg-blue-950 items-center justify-center">
           <div className="text-center">
-            <h2
-              className="text-6xl font-bold text-gray-800"
-              style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
-            >
-              Random Image or text
-            </h2>
+            <Image height={400} width={400} alt="Elevatex 3.0 Logo" src={"/elevatex-logo.png"} />
           </div>
-        </div>
+        </div> */}
       </div>
   );
 }

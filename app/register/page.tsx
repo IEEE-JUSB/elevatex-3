@@ -1,4 +1,5 @@
 "use client";
+import { signUp } from "@/lib/auth-client";
 import React, { useState } from "react";
 
 export default function RegisterPage() {
@@ -11,10 +12,31 @@ export default function RegisterPage() {
     year: "",
     phone: "",
   });
+  const [status, setStatus] = useState("");
 
   const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    alert("Registration submitted!");
+    console.log(formData);
+    signUp.email({
+      email: formData.email,
+      password: formData.password,
+      name: formData.name,
+      college: formData.college,
+      department: formData.dept,
+      year: formData.year,
+      phone: formData.phone,
+      role: "USER",
+      callbackURL: "/dashboard"
+    },{
+      onRequest: () => {
+        setStatus("Loading...")
+      },
+      onSuccess: () => {
+        setStatus("Registration complete!")
+      },
+      onError: () => {
+        setStatus("Error occurred.")
+      }
+    })
   };
 
   const handleChange = (field: string, value: string) => {
@@ -26,8 +48,7 @@ export default function RegisterPage() {
 
   return (
       <div className="sm:min-h-screen flex flex-col sm:flex-row">
-        {/* Left Section - Form */}
-        <div className="sm:w-1/2 bg-gradient-to-br from-blue-300 to-blue-400 p-12 flex flex-col justify-center overflow-y-auto font-syne">
+        <div className="w-full bg-gradient-to-br from-blue-300 to-blue-400 p-12 flex flex-col justify-center overflow-y-auto font-syne">
           <div className="max-w-md mx-auto w-full py-8">
             <h1 className="text-5xl font-bold text-gray-900 mb-2">
               Step into the
@@ -136,6 +157,8 @@ export default function RegisterPage() {
                 />
               </div>
 
+              <p className="text-white">{status}</p>
+
               {/* Register Button */}
               <div className="pt-4">
                 <button
@@ -153,18 +176,6 @@ export default function RegisterPage() {
               </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* Right Section - Random Image Text */}
-        <div className="hidden sm:w-1/2 bg-gray-200 sm:flex items-center justify-center">
-          <div className="text-center">
-            <h2
-              className="text-6xl font-bold text-gray-800"
-              style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
-            >
-              Random Image or text
-            </h2>
           </div>
         </div>
       </div>
