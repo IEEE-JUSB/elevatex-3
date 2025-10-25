@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 const seminars = [
   { title: "Higher Education", img: "/speaker.png", speaker:"Jamboree", date: "29/10/2025", timing: "7:00pm to 8:00pm" },
