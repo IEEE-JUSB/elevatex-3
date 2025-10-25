@@ -46,8 +46,8 @@ function ClientCode() {
 
     getEvents(data.user.id).then((res) => {
       // console.log(res);
-      setRegisteredEvents(res.filter((e) => e.registered));
-      setUpcomingEvents(res.filter((e) => !e.registered));
+      setRegisteredEvents(res.filter((e: EventType) => e.registered));
+      setUpcomingEvents(res.filter((e: EventType) => !e.registered));
     });
   }, [isPending]);
 
