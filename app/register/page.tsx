@@ -15,7 +15,7 @@ export default function RegisterPage() {
   const [status, setStatus] = useState("");
 
   const handleSubmit = () => {
-    console.log(formData);
+    // console.log(formData);
     signUp.email({
       email: formData.email,
       password: formData.password,

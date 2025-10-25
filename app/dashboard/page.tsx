@@ -45,7 +45,7 @@ function ClientCode() {
     if (!data || !data.session) redirect("/login");
 
     getEvents(data.user.id).then((res) => {
-      console.log(res);
+      // console.log(res);
       setRegisteredEvents(res.filter((e) => e.registered));
       setUpcomingEvents(res.filter((e) => !e.registered));
     });
