@@ -51,7 +51,9 @@ function ClientCode() {
     });
   }, [isPending]);
 
-  if (isPending) return <div>Loading...</div>;
+  if (isPending) return <div className="min-h-screen bg-gradient-to-br from-blue-300 to-blue-400 grid place-items-center w-full">
+    <h1 className="text-4xl font-bold font-syne">Loading...</h1>
+  </div>;
 
   if (!data) return;
 
@@ -61,8 +63,8 @@ function ClientCode() {
       <h2 className="font-medium text-lg sm:text-2xl">
         Welcome, {data.user.name}!
       </h2>
-      <div className="w-full grid place-items-center sm:grid-cols-2 p-8">
-        <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-3/4">
+      <div className="w-full grid place-items-center sm:grid-cols-2 sm:p-8 gap-12">
+        <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-full sm:w-3/4">
           <h3 className="text-2xl text-blue-800">Registered Events</h3>
           {registeredEvents && registeredEvents.length > 0 ? (
             registeredEvents.map((e) => (
@@ -75,7 +77,7 @@ function ClientCode() {
             <div>No registered events.</div>
           )}
         </div>
-        <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-3/4">
+        <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-full sm:w-3/4">
           <h3 className="text-2xl text-blue-800">Upcoming Events</h3>
           {upcomingEvents && upcomingEvents.length > 0 ? (
             upcomingEvents.map((e) => (
