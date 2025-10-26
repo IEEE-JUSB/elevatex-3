@@ -25,8 +25,8 @@ export default function LoginPage() {
         setStatus("Logged in successfully!");
         redirect("/dashboard")
       },
-      onError: () => {
-        setStatus("Error occurred. Please check credentials.")
+      onError: (err) => {
+        setStatus(`Error occurred: ${err.error.message}`);
       }
     })
   };
@@ -88,7 +88,7 @@ export default function LoginPage() {
               <div className="pt-4">
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200 cursor-pointer"
                 >
                   Login
                 </button>

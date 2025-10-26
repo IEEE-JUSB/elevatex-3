@@ -33,8 +33,8 @@ export default function RegisterPage() {
       onSuccess: () => {
         setStatus("Registration complete!")
       },
-      onError: () => {
-        setStatus("Error occurred.")
+      onError: (err) => {
+        setStatus(`Error occurred: ${err.error.message}`);
       }
     })
   };
@@ -90,7 +90,7 @@ export default function RegisterPage() {
               {/* Password Field */}
               <div>
                 <label className="block text-sm font-semibold text-gray-800 mb-2">
-                  Password
+                  Password (8 characters or more)
                 </label>
                 <input
                   type="password"
@@ -163,7 +163,7 @@ export default function RegisterPage() {
               <div className="pt-4">
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200 cursor-pointer"
                 >
                   Register
                 </button>

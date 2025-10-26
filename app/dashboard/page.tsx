@@ -20,6 +20,7 @@ function ClientCode() {
   const { data, isPending } = useSession();
   const [registeredEvents, setRegisteredEvents] = useState<EventType[]>();
   const [upcomingEvents, setUpcomingEvents] = useState<EventType[]>();
+  const [eventsLoading, setEventsLoading] = useState<boolean>(true);
 
   const handleRegister = (eventId: string, userId: string) => {
     registerForEvent(eventId, userId)
@@ -48,6 +49,7 @@ function ClientCode() {
       // console.log(res);
       setRegisteredEvents(res.filter((e: EventType) => e.registered));
       setUpcomingEvents(res.filter((e: EventType) => !e.registered));
+      setEventsLoading(false);
     });
   }, [isPending]);
 
@@ -74,7 +76,7 @@ function ClientCode() {
               </div>
             ))
           ) : (
-            <div>No registered events.</div>
+            <div>{eventsLoading ? "Loading..." : "No registered events."}</div>
           )}
         </div>
         <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-full sm:w-3/4">
@@ -88,12 +90,12 @@ function ClientCode() {
               </div>
             ))
           ) : (
-            <div>No upcoming events to register.</div>
+            <div>{eventsLoading ? "Loading..." : "No upcoming events to register."}</div>
           )}
         </div>
       </div>
       <button
-        className="absolute bottom-10 text-lg text-white bg-red-600 px-3 py-1 rounded-lg"
+        className="absolute bottom-10 text-lg text-white bg-red-600 px-3 py-1 rounded-lg cursor-pointer"
         onClick={() => handleSignOut()}
       >
         Logout
