@@ -61,11 +61,17 @@ const HeroSection: FC = () => {
                 <div className="lg:text-left text-center">Boundaries</div>
               </h1>
             </div>
-            <Link href={"/register"}
-              className="mt-10 px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 text-lg md:text-xl"
-            >
-              Register Now
-            </Link>
+            <div className='flex gap-8 justify-center'>
+              <Link href={"/register"}
+                className="mt-10 px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 text-lg md:text-xl"
+              >
+                Register Now
+              </Link>
+              <Link href="https://chat.whatsapp.com/J0LeXyC0eFGEe8S1cqsWI4?mode=wwt" target='blank' className="mt-10 px-5 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-opacity-50 text-lg md:text-xl flex justify-center">
+                <img width="20" height="20" src="https://img.icons8.com/forma-regular/24/whatsapp.png" alt="whatsapp"/>
+                WhatsApp Link
+              </Link>
+            </div>
           </div>
           <div className="flex flex-col items-center lg:items-end mt-16 lg:mt-0">
             <div className="w-full max-w-sm sm:max-w-md bg-white rounded-[30px] shadow-2xl transition-all duration-500 ease-in-out transform hover:shadow-sky-300/50 overflow-hidden relative">
