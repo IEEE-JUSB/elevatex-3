@@ -20,17 +20,17 @@ const HeroSection: FC = () => {
   return (
     <div id='home' className="min-h-screen bg-gradient-to-bl from-blue-300 via-white to-gray-300 font-sans antialiased text-gray-800 overflow-hidden">
       <div
-        className="absolute inset-0 z-0 opacity-70"
+        className="absolute inset-0 z-0 opacity-70 right-0 top-0"
         style={{
-          background: 'radial-gradient(circle at 75% 50%, #e0f2fe, transparent 50%), radial-gradient(circle at 15% 70%, #f0f9ff, transparent 50%)',
+          background: 'radial-gradient(circle at 75% 50%, #CBC3E3, transparent 10%), radial-gradient(circle at 15% 70%, #CBC3E3, transparent 80%)',
           filter: 'blur(150px)',
         }}
       ></div>
       <div className="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="flex justify-between items-center py-6 md:py-8">
-          <div className="text-2xl md:text-3xl font-extrabold tracking-tight text-gray-900">
+          <Link href={"/"} className="text-2xl md:text-3xl lg:text-5xl font-extrabold tracking-tight text-gray-900">
             ElevateX <span className="text-blue-600">3.0</span>
-          </div>
+          </Link>
           <nav className="hidden lg:flex items-center space-x-8 xl:space-x-10 text-lg font-medium font-syne">
             {navItems.map((item: NavItem) => (
               <a
