@@ -1,18 +1,18 @@
 import React from "react";
 
 const seminars = [
-  { title: "Higher Education", img: "/speaker.png", speaker:"Jamboree", date: "29/10/2025", timing: "7:00pm to 8:00pm" },
-  { title: "Common Aptitude Test (CAT)", img: "/speaker.png", speaker:"Soumyadeep Pal", date: "1/11/2025", timing: "TBD" },
-  { title: "Resume Building", img: "/speaker.png", speaker:"Sayandeep Sarkar", date: "2/11/2025", timing: "TBD" },
-  { title: "Data Analytics and Consultancy", img: "/speaker.png", speaker:"Rahul Halder", date: "8/11/2025", timing: "TBD" },
-  { title: "Open Source", img: "/speaker.png", speaker:"Chirag Agarwal", date: "15/11/2025", timing: "TBD" },
+  { title: "In The Horizon: The Postgrad Fork", img: "/speaker.png", speaker:"Jamboree", date: "29/10/2025", timing: "7:00pm to 8:00pm" },
+  { title: "Decoding CAT: the Top 0.1% Paradox Unmasked", img: "/speaker.png", speaker:"Soumyadeep Pal", date: "1/11/2025", timing: "TBD" },
+  // { title: "Resume Building", img: "/speaker.png", speaker:"Sayandeep Sarkar", date: "2/11/2025", timing: "TBD" },
+  // { title: "Data Analytics and Consultancy", img: "/speaker.png", speaker:"Rahul Halder", date: "8/11/2025", timing: "TBD" },
+  // { title: "Open Source", img: "/speaker.png", speaker:"Chirag Agarwal", date: "15/11/2025", timing: "TBD" },
 ];
 
 export default function Schedule() {
   return (
     <div
       id="schedule"
-      className="min-h-screen bg-white text-gray-800 px-8 py-12 mt-6"
+      className="min-h-[50vh] bg-white text-gray-800 px-8 py-12 mt-6"
     >
       {/* Header */}
       <div className="text-center mb-16">

@@ -10,19 +10,29 @@ interface Speaker {
 const Speakers: React.FC = () => {
   const speakers: Speaker[] = [
     {
-      image: "/don.webp",
-      name: "Krishna",
-      url: "https://www.google.com",
+      image: "/speakers/soumyadeep.jpeg",
+      name: "Soumyadeep Pal",
+      url: "/",
     },
     {
-      image: "/don.webp",
-      name: "Krishna",
-      url: "https://www.google.com",
+      image: "/speakers/sayandeep.jpeg",
+      name: "Sayandeep Sarkar",
+      url: "/",
     },
     {
-      image: "/don.webp",
-      name: "Krishna",
-      url: "https://www.google.com",
+      image: "/speakers/nandini.JPG",
+      name: "Nandini Bagga",
+      url: "/",
+    },
+    {
+      image: "/speakers/chirag.jpeg",
+      name: "Chirag Agarwal",
+      url: "/",
+    },
+    {
+      image: "/speakers/rahul.jpeg",
+      name: "Rahul Haldar",
+      url: "/",
     },
   ];
 

@@ -15,12 +15,12 @@ const Card: React.FC<CardProps> = ({ image, name, url }) => (
       height={500}
       src={image}
       alt={name}
-      className="w-full h-auto rounded-2xl mb-3 mx-auto absolute"
+      className="w-full h-auto rounded-2xl mb-3 mx-auto absolute aspect-square object-cover"
     />
     <Link
       href={url}
       target="_blank"
-      className="text-white text-lg font-syne font-bold absolute bottom-5 left-1/2 -translate-x-1/2"
+      className="text-white text-lg lg:text-xl drop-shadow-2xl bg-black/10 w-full text-center py-3 font-syne font-bold absolute bottom-0 left-1/2 -translate-x-1/2"
     >
       {name}
     </Link>

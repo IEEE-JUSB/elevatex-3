@@ -30,49 +30,6 @@ export default function AboutSection() {
           </div>
         </div>
         
-        {/* Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-6 items-center wow animate__animated animate__fadeInUp" data-wow-delay="0.2s">
-          
-          {/* Image 1 (Left) */}
-          <div className="sm:col-span-1 lg:col-span-2">
-              <Image
-                src="https://placeholder.pics/svg/400x500"
-                alt="Business collaboration handshake"
-                width={400}
-                height={500}
-                className="w-full h-auto object-cover rounded-2xl border border-gray-200 shadow-sm"
-                //remove this when using actual images
-                unoptimized={true} 
-              />
-          </div>
-          
-          {/* Image 2 (Center) */}
-          <div className="sm:col-span-1 lg:col-span-2">
-              <Image
-                src="https://placeholder.pics/svg/400x300"
-                alt="Individual focus with laptop"
-                width={400}
-                height={300}
-                className="w-full h-auto object-cover rounded-2xl border border-gray-200 shadow-sm"
-                //remove this when using actual images
-                unoptimized={true} 
-              />
-          </div>
-          
-          {/* Image 3 (Right) */}
-          <div className="sm:col-span-2 lg:col-span-2">
-              <Image
-                src="https://placeholder.pics/svg/400x500"
-                alt="Team strategy meeting"
-                width={400}
-                height={500}
-                className="w-full h-auto object-cover rounded-2xl border border-gray-200 shadow-sm"
-                //remove this when using actual images
-                unoptimized={true} 
-              />
-          </div>
-          
-        </div>
       </div>
     </section>
   );
