@@ -9,6 +9,7 @@ import {
 } from "@/lib/eventRegistration";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import Image from "next/image";
 
 const handleSignOut = () => {
   signOut({
@@ -70,24 +71,39 @@ function ClientCode() {
   if (!data) return;
 
   return (
-    <div className="relative font-syne min-h-screen bg-gradient-to-br from-blue-300 to-blue-400 flex flex-col items-center gap-y-8 p-12">
+    <div className="relative font-syne min-h-screen bg-gradient-to-br from-blue-300 to-blue-400 flex flex-col items-center gap-y-4 p-12">
+      <Link
+        href={"/"}
+        className="cursor-pointer hover:scale-105 transition duration-300"
+      >
+        <Image
+          height={200}
+          width={200}
+          src="/elevatex-logo.png"
+          alt="ElevateX Logo"
+        />
+      </Link>
       <h1 className="text-4xl lg:text-6xl font-bold">Dashboard</h1>
-      <h2 className="font-medium text-lg sm:text-2xl">
+      <h2 className="font-medium text-lg sm:text-2xl my-4">
         Welcome, {data.user.name}!
       </h2>
+      <h3 className="sm:text-lg">
+        Check out our <Link href={"/#schedule"} className="underline underline-offset-2">Schedule</Link> and{" "}
+        <Link href={"/#speakers"} className="underline underline-offset-2">Speakers</Link> to learn more!
+      </h3>
       <div className="w-full grid place-items-center sm:grid-cols-2 sm:p-8 gap-12">
         <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-full sm:w-3/4">
           <h3 className="text-2xl text-blue-800">Registered Events</h3>
           {registeredEvents && registeredEvents.length > 0 ? (
             registeredEvents.map((e) => (
               <div
-                key={e.id}
-                className="w-full grid grid-cols-2 place-items-center"
+              key={e.id}
+              className="w-full grid grid-cols-2 place-items-center"
               >
                 {e.eventUrl ? (
                   <Link
-                    href={e.eventUrl}
-                    className="underline underline-offset-2"
+                  href={e.eventUrl}
+                  className="underline underline-offset-2"
                   >
                     {e.name}
                   </Link>
@@ -100,6 +116,7 @@ function ClientCode() {
           ) : (
             <div>{eventsLoading ? "Loading..." : "No registered events."}</div>
           )}
+          <p className="text-sm text-blue-900">Before each event, the event link will be sent to your registered email!</p>
         </div>
         <div className="flex flex-col items-center gap-y-6 bg-white/30 p-6 rounded-xl w-full sm:w-3/4">
           <h3 className="text-2xl text-blue-800">Upcoming Events</h3>

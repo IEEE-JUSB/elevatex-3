@@ -42,7 +42,7 @@ export default function LoginPage() {
       <div className="sm:min-h-screen flex flex-col md:flex-row">
         <div className="w-full bg-gradient-to-br from-blue-300 to-blue-400 p-12 pt-0 flex flex-col items-center justify-around">
           <Link href={"/"}>
-            <Image src={"/elevatex-logo.png"} alt="ElevateX 3.0 Logo" height={200} width={400} className="aspect-video object-cover" />
+            <Image src={"/elevatex-logo.png"} alt="ElevateX 3.0 Logo" height={200} width={400} className="aspect-video object-contain" />
           </Link>
           <div className="max-w-md mx-auto w-full font-syne">
             <h1 className="text-5xl font-bold text-gray-900 mb-2">
