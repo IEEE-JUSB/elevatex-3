@@ -1,5 +1,6 @@
 "use client";
 import { signUp } from "@/lib/auth-client";
+import { redirect } from "next/navigation";
 import React, { useState } from "react";
 
 export default function RegisterPage() {
@@ -31,7 +32,8 @@ export default function RegisterPage() {
         setStatus("Loading...")
       },
       onSuccess: () => {
-        setStatus("Registration complete!")
+        setStatus("Registration complete!");
+        redirect("/dashboard");
       },
       onError: (err) => {
         setStatus(`Error occurred: ${err.error.message}`);
@@ -152,7 +154,7 @@ export default function RegisterPage() {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => handleChange("phone", e.target.value)}
-                  placeholder="+91 1234567890"
+                  placeholder="9876543210"
                   className="w-full px-4 py-3 rounded-full bg-blue-200 bg-opacity-50 border-2 border-blue-300 focus:outline-none focus:border-indigo-500 text-gray-800 placeholder-gray-600"
                 />
               </div>
@@ -164,6 +166,7 @@ export default function RegisterPage() {
                 <button
                   onClick={handleSubmit}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200 cursor-pointer"
+                  disabled={status==="Loading..."}
                 >
                   Register
                 </button>

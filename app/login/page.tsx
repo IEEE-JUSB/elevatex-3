@@ -89,6 +89,7 @@ export default function LoginPage() {
                 <button
                   onClick={handleSubmit}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-colors duration-200 cursor-pointer"
+                  disabled={status==="Loading..."}
                 >
                   Login
                 </button>
