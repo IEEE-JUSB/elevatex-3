@@ -83,6 +83,7 @@ export default function LoginPage() {
               </div>
 
               <p className="text-white">{status}</p>
+              {status === "Logged in successfully!" && <p className="text-white">You should be redirected automatically, else click here - <Link href={"/dashboard"} className="underline underline-offset-2">/dashboard</Link></p>}
 
               {/* Login Button */}
               <div className="pt-4">
