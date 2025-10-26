@@ -1,7 +1,7 @@
 import React from "react";
 
 const seminars = [
-  { title: "In The Horizon: The Postgrad Fork", img: "/speaker.png", speaker:"Jamboree", date: "29/10/2025", timing: "7:00pm to 8:00pm" },
+  { title: "In The Horizon: The Postgrad Fork", img: "/speaker.png", speaker:"Raman Trivedi", date: "29/10/2025", timing: "7:00pm to 8:00pm" },
   { title: "Decoding CAT: the Top 0.1% Paradox Unmasked", img: "/speaker.png", speaker:"Soumyadeep Pal", date: "1/11/2025", timing: "TBD" },
   // { title: "Resume Building", img: "/speaker.png", speaker:"Sayandeep Sarkar", date: "2/11/2025", timing: "TBD" },
   // { title: "Data Analytics and Consultancy", img: "/speaker.png", speaker:"Rahul Halder", date: "8/11/2025", timing: "TBD" },
