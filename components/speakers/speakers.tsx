@@ -5,35 +5,49 @@ interface Speaker {
   image: string;
   name: string;
   url: string;
+  designation?: string;
 }
 
 const Speakers: React.FC = () => {
   const speakers: Speaker[] = [
+      {
+      image: "/speakers/raman.jpg",
+      name: "Raman Trivedi",
+      url: "linkedin.com/in/raman-trivedi-530a871a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      designation: "CITY HEAD AT JAMBOREE EDUCATION INDIA PVT. LTD."
+    },
+  
     {
       image: "/speakers/soumyadeep.jpeg",
       name: "Soumyadeep Pal",
       url: "/",
+      // designation: "speakers designation"
     },
     {
       image: "/speakers/sayandeep.jpeg",
       name: "Sayandeep Sarkar",
       url: "/",
+      // designation: "speakers designation"
     },
     {
       image: "/speakers/nandini.JPG",
       name: "Nandini Bagga",
       url: "/",
+      // designation: "speakers designation"
     },
     {
       image: "/speakers/chirag.jpeg",
       name: "Chirag Agarwal",
       url: "/",
+      // designation: "speakers designation"
     },
     {
       image: "/speakers/rahul.jpeg",
       name: "Rahul Haldar",
       url: "/",
+      // designation: "speakers designation designation"
     },
+    
   ];
 
   return (
@@ -50,6 +64,7 @@ const Speakers: React.FC = () => {
               image={speaker.image}
               name={speaker.name}
               url={speaker.url}
+              designation={speaker.designation}
             />
           ))}
         </div>

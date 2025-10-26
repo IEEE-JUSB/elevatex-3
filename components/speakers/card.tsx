@@ -6,9 +6,10 @@ interface CardProps {
   image: string;
   name: string;
   url: string;
+  designation?: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, name, url }) => (
+const Card: React.FC<CardProps> = ({ image, name, url, designation }) => (
   <div className="rounded-2xl w-full aspect-square max-w-xs md:max-w-sm lg:max-w-md relative">
     <Image
       width={500}
@@ -22,7 +23,8 @@ const Card: React.FC<CardProps> = ({ image, name, url }) => (
       target="_blank"
       className="text-white text-lg lg:text-xl drop-shadow-2xl bg-black/10 w-full text-center py-3 font-syne font-bold absolute bottom-0 left-1/2 -translate-x-1/2"
     >
-      {name}
+      {name}<br/>
+      Designation: {designation}
     </Link>
   </div>
 );
