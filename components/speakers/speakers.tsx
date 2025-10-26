@@ -14,7 +14,7 @@ const Speakers: React.FC = () => {
       image: "/speakers/raman.jpg",
       name: "Raman Trivedi",
       url: "linkedin.com/in/raman-trivedi-530a871a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
-      designation: "CITY HEAD AT JAMBOREE EDUCATION INDIA PVT. LTD."
+      designation: "City Head at Jamboree Education India"
     },
   
     {
