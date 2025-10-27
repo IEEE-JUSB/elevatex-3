@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 export async function sendWelcomeEmail(email: string, otp: string) {
     try {
         await transporter.sendMail({
-            from: process.env.SMTP_FROM,
+            from: process.env.SMTP_USER,
             to: email,
             subject: "ElevateX 3.0 Registration",
             html: `

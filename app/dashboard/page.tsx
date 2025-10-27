@@ -147,7 +147,7 @@ function ClientCode() {
         </div>
       </div>
       <button
-        className="absolute bottom-10 text-lg text-white bg-red-600 px-3 py-1 rounded-lg cursor-pointer"
+        className="text-lg text-white bg-red-600 px-3 py-1 rounded-lg cursor-pointer"
         onClick={() => handleSignOut()}
       >
         Logout
