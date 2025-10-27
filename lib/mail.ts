@@ -10,21 +10,23 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-export async function sendWelcomeEmail(email: string, name: string) {
+export async function sendWelcomeEmail(email: string, otp: string) {
     try {
         await transporter.sendMail({
             from: process.env.SMTP_FROM,
             to: email,
-            subject: "Registration Confirmation - HELLO-IEEE!",
+            subject: "ElevateX 3.0 Registration",
             html: `
-        <h2>Dear ${name}!</h2>
         <h3>Greetings from IEEE JUSB!</h3>
-        <p>
-Congratulations for registering to HELLO-IEEE, our official orientation program specially for you!</p>
-        <p>Mark your calendars on the <b>8th of January, 2025</b>, and be present at <b>Dr. Triguna Sen Auditorium, Jadavpur University</b>,to witness a plethora of exciting activities- including sessions on web development and machine learning, finally the much awaited announcement of winners to the meme competition ,Lolgorithm.</p>
-      <p>Did we also say that you get to network with industry experts and stand a chance to win limited edition prizes?</p>
-      <p>Please feel free to reply to this email for any queries / clarifications or reach out to us on our official WhatsApp groups.
-      Follow this link to join our WhatsApp group: https://chat.whatsapp.com/EXuC1GZz89dFIjv0k1xJWV </p><h3>Warm wishes,</h3><h3>IEEE JUSB.</h3>`,
+        <p>Congratulations for registering to ElevateX, a series of webinars aimed at helping you elevate your skills to the next level!</p>
+        <p>Use this code to verify your email - <b>${otp}</b></p>
+        <p>Get ready to witness a plethora of interesting sessions - on coding, electronics, higher studies, and much more!</p>
+        <p>Did we also say that you get to network with industry experts and clear all your doubts?</p>
+        <p>Please feel free to reply to reach out to us on our official WhatsApp groups if you have any queries!.
+        Join our WhatsApp group for further updates: https://chat.whatsapp.com/EXuC1GZz89dFIjv0k1xJWV </p>
+        <p>PS: Don't forget to register for the individual sessions over at https://elevatex3.ieee-jaduniv.in/dashboard! Don't worry, we'll email you the joining link for each event before it starts, or you can find it over at your dashboard on the website, as per your convenience </p>
+        <h3>Warm wishes,</h3>
+        <h3>IEEE JUSB.</h3>`,
         });
     } catch (error) {
         console.error("Failed to send welcome email:", error);

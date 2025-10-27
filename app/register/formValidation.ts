@@ -1,4 +1,4 @@
-interface FormDataType{
+export interface FormDataType{
     name: string;
     email: string;
     password: string;

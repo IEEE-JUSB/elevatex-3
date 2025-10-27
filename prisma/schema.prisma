@@ -86,3 +86,9 @@ model Verification {
 
   @@map("verification")
 }
+
+model Otp{
+  id String @id @default(uuid())
+  value String
+  email String
+}

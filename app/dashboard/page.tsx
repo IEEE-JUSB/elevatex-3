@@ -51,7 +51,9 @@ function ClientCode() {
 
   useEffect(() => {
     if (isPending) return;
-    if (!data || !data.session) redirect("/login");
+    if (!data || !data.session){
+      redirect("/login");
+    }
 
     getEvents(data.user.id).then((res) => {
       // console.log(res);

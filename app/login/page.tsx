@@ -16,17 +16,20 @@ export default function LoginPage() {
     signIn.email({
       email: formData.email,
       password: formData.password,
-      callbackURL: "/dashboard"
+      callbackURL: "/dashboard?from=login"
     },{
       onRequest: () => {
         setStatus("Loading...");
       },
       onSuccess: () => {
         setStatus("Logged in successfully!");
-        redirect("/dashboard")
+        redirect("/dashboard?from=login")
       },
       onError: (err) => {
-        setStatus(`Error occurred: ${err.error.message}`);
+        if(err.error.message === "Email not verified"){
+          setStatus("Email not verified. Please check your email for verification mail.");
+        }
+        else setStatus(`Error occurred: ${err.error.message}`);
       }
     })
   };

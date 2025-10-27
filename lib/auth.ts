@@ -1,7 +1,8 @@
 import {betterAuth} from "better-auth";
 import {prismaAdapter} from "better-auth/adapters/prisma";
 import prisma from "../prisma/client";
-// import { sendWelcomeEmail } from "./mail";
+import { sendWelcomeEmail } from "./mail";
+import { emailOTP } from "better-auth/plugins";
 
 export const auth = betterAuth({
     database: prismaAdapter(prisma, {
@@ -9,13 +10,7 @@ export const auth = betterAuth({
     }),
     emailAndPassword: {
         enabled: true,
-        // requireEmailVerification: true
     },
-    // emailVerification: {
-    //     sendVerificationEmail: async ({user, url}) => {
-    //         await sendWelcomeEmail(user.email, user.name);
-    //     }
-    // },
     user: {
         additionalFields: {
             role: {type: "string"},
@@ -24,5 +19,20 @@ export const auth = betterAuth({
             college: {type: "string"},
             phone: {type: "string"}
         }
-    }
+    },
+    plugins: [
+        emailOTP({
+            async sendVerificationOTP({email, otp, type}){
+                if(type === "email-verification"){
+                    await sendWelcomeEmail(email,otp);
+                    await prisma.otp.create({
+                        data: {
+                            value: otp,
+                            email
+                        }
+                    })
+                }
+            }
+        })
+    ]
 });
