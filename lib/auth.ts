@@ -25,8 +25,12 @@ export const auth = betterAuth({
             async sendVerificationOTP({email, otp, type}){
                 if(type === "email-verification"){
                     await sendWelcomeEmail(email,otp);
-                    await prisma.otp.create({
-                        data: {
+                    await prisma.otp.upsert({
+                        where: {
+                            email
+                        },
+                        update: {value: otp},
+                        create: {
                             value: otp,
                             email
                         }

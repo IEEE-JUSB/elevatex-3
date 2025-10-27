@@ -90,5 +90,5 @@ model Verification {
 model Otp{
   id String @id @default(uuid())
   value String
-  email String
+  email String @unique
 }
