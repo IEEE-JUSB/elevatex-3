@@ -18,6 +18,9 @@ export default function RegisterPage() {
   const [status, setStatus] = useState("");
 
   const handleSubmit = () => {
+    // for(const key in formData){
+    //   console.log(key);
+    // }
     const formValidity = validateForm(formData);
     if(!formValidity.ok){
       toast.error(formValidity.message);

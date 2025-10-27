@@ -18,7 +18,7 @@ export const validateForm = (formData: FormDataType) => {
     if(!formData.dept) return {ok: false, message: "Department is required!"};
     if(!formData.year) return {ok: false, message: "Year is required!"};
     // regex check
-    if(!formData.phone || !formData.phone.match("^\d{10}$")) return {ok: false, message: "Phone number must be exactly 10 digits"};
+    if(!formData.phone) return {ok: false, message: "Phone number is required"};
 
     return {ok: true, message: "Registration data validated."}
 }
