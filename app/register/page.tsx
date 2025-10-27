@@ -2,6 +2,8 @@
 import { signUp } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import { validateForm } from "./formValidation";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -16,7 +18,11 @@ export default function RegisterPage() {
   const [status, setStatus] = useState("");
 
   const handleSubmit = () => {
-    // console.log(formData);
+    const formValidity = validateForm(formData);
+    if(!formValidity.ok){
+      toast.error(formValidity.message);
+      return;
+    }
     signUp.email({
       email: formData.email,
       password: formData.password,
@@ -156,6 +162,7 @@ export default function RegisterPage() {
                   onChange={(e) => handleChange("phone", e.target.value)}
                   placeholder="9876543210"
                   className="w-full px-4 py-3 rounded-full bg-blue-200 bg-opacity-50 border-2 border-blue-300 focus:outline-none focus:border-indigo-500 text-gray-800 placeholder-gray-600"
+                  required
                 />
               </div>
 
