@@ -157,7 +157,7 @@ function ClientCode({ user }:{user: UserType}) {
                 <button
                   className="bg-blue-400 py-1 px-2 rounded-md cursor-pointer hover:bg-blue-500 transition-colors duration-300"
                   onClick={() => handleRegister(e.id, user.id)}
-                  disabled={registering}
+                  disabled={registering || e.registrationsOpen === false}
                 >
                   Register
                 </button>
