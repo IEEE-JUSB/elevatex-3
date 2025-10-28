@@ -33,7 +33,7 @@ const Speakers: React.FC = () => {
       image: "/speakers/nandini.JPG",
       name: "Nandini Bagga",
       url: "https://www.linkedin.com/in/nandini-bagga-0803/",
-      designation: "Software Engineer, Japan Space and Technology Agency"
+      designation: "Software Engineer in Tokyo"
     },
     {
       image: "/speakers/chirag.jpeg",
