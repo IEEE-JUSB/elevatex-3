@@ -6,24 +6,26 @@ import { signIn } from "@/lib/auth-client";
 import { redirect } from "next/navigation";
 
 export default function LoginPage() {
+  // const params = useSearchParams();
+  const from = "dashboard";
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
   const [status, setStatus] = useState("");
-
   const handleSubmit = () => {
     signIn.email({
       email: formData.email,
       password: formData.password,
-      callbackURL: "/dashboard?from=login"
+      callbackURL: "/dashboard"
     },{
       onRequest: () => {
         setStatus("Loading...");
       },
       onSuccess: () => {
         setStatus("Logged in successfully!");
-        redirect("/dashboard?from=login")
+        redirect("/dashboard")
       },
       onError: (err) => {
         if(err.error.message === "Email not verified"){
@@ -105,16 +107,11 @@ export default function LoginPage() {
               Don&apos;t have an account?
               </a>
               </div>
+
+              {(from === "dashboard") && <p className="text-black/60 text-center">If you logged in but weren&apos;t redirected, click <Link href={"/dashboard"}className="underline">here</Link></p>}
             </div>
           </div>
         </div>
-
-        {/* Right Section - Random Image Text */}
-        {/* <div className="hidden sm:flex sm:w-1/3 bg-blue-950 items-center justify-center">
-          <div className="text-center">
-            <Image height={400} width={400} alt="Elevatex 3.0 Logo" src={"/elevatex-logo.png"} />
-          </div>
-        </div> */}
       </div>
   );
 }

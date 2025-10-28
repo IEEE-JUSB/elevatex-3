@@ -1,6 +1,6 @@
 "use client";
 import { signOut, useSession } from "@/lib/auth-client";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import {
   getEvents,
@@ -27,6 +27,7 @@ function ClientCode() {
   const [upcomingEvents, setUpcomingEvents] = useState<EventType[]>();
   const [eventsLoading, setEventsLoading] = useState<boolean>(true);
   const [registering, setRegistering] = useState<boolean>(false);
+  const router = useRouter();
 
   const handleRegister = (eventId: string, userId: string) => {
     setRegistering(true);
@@ -52,25 +53,23 @@ function ClientCode() {
   useEffect(() => {
     if (isPending) return;
     if (!data || !data.session){
-      redirect("/login");
+      router.push("/login?from=dashboard");
+      return;
     }
 
     getEvents(data.user.id).then((res) => {
-      // console.log(res);
       setRegisteredEvents(res.filter((e: EventType) => e.registered));
       setUpcomingEvents(res.filter((e: EventType) => !e.registered));
       setEventsLoading(false);
     });
-  }, [isPending]);
+  }, [isPending, data, router]);
 
-  if (isPending)
+  if (isPending || !data || !data.session)
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-300 to-blue-400 grid place-items-center w-full">
         <h1 className="text-4xl font-bold font-syne">Loading...</h1>
       </div>
-    );
-
-  if (!data) return;
+  );
 
   return (
     <div className="relative font-syne min-h-screen bg-gradient-to-br from-blue-300 to-blue-400 flex flex-col items-center gap-y-4 p-12">
