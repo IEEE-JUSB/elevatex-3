@@ -13,39 +13,39 @@ const Speakers: React.FC = () => {
       {
       image: "/speakers/raman.jpg",
       name: "Raman Trivedi",
-      url: "linkedin.com/in/raman-trivedi-530a871a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      url: "https://linkedin.com/in/raman-trivedi-530a871a5/",
       designation: "City Head at Jamboree Education India"
     },
   
     {
       image: "/speakers/soumyadeep.jpeg",
       name: "Soumyadeep Pal",
-      url: "/",
-      // designation: "speakers designation"
+      url: "https://www.linkedin.com/in/realspal/",
+      designation: "CAT 99.9 percentile, IIM Calcutta"
     },
     {
       image: "/speakers/sayandeep.jpeg",
       name: "Sayandeep Sarkar",
-      url: "/",
-      // designation: "speakers designation"
+      url: "https://www.linkedin.com/in/sayandeep-sarkar-530688201/",
+      designation: "Software Engineer @ ICICI Bank"
     },
     {
       image: "/speakers/nandini.JPG",
       name: "Nandini Bagga",
-      url: "/",
-      // designation: "speakers designation"
+      url: "https://www.linkedin.com/in/nandini-bagga-0803/",
+      designation: "Software Engineer, Japan Space and Technology Agency"
     },
     {
       image: "/speakers/chirag.jpeg",
       name: "Chirag Agarwal",
-      url: "/",
-      // designation: "speakers designation"
+      url: "https://www.linkedin.com/in/chiragagg5k/",
+      designation: "Platform Engineer @ Appwrite"
     },
     {
       image: "/speakers/rahul.jpeg",
       name: "Rahul Haldar",
-      url: "/",
-      // designation: "speakers designation designation"
+      url: "https://www.linkedin.com/in/rahul-halder-95a7ab147/",
+      designation: "Associate Consultant @ PWC"
     },
     
   ];
