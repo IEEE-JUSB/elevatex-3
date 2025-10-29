@@ -159,7 +159,7 @@ function ClientCode({ user }:{user: UserType}) {
                   onClick={() => handleRegister(e.id, user.id)}
                   disabled={registering || e.registrationsOpen === false}
                 >
-                  Register
+                  {e.registrationsOpen ? "Register" : "Registration Closed"}
                 </button>
               </div>
             ))
