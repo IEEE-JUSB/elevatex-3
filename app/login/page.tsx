@@ -103,7 +103,7 @@ export default function LoginPage() {
 
               {/* Additional Links */}
               <div className="text-center pt-2">
-              <a href="/register" className="text-sm text-gray-800 hover:text-indigo-900 font-medium">
+              <a href="/dashboard" className="text-sm text-gray-800 hover:text-indigo-900 font-medium">
               Don&apos;t have an account?
               </a>
               </div>

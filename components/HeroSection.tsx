@@ -44,7 +44,7 @@ const HeroSection: FC = () => {
               </a>
             ))}
           </nav>
-          <Link href={"/register"}
+          <Link href={"/dashboard"}
             className="px-6 py-2 bg-gray-900 text-white font-semibold rounded-xl shadow-lg hover:bg-sky-600 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-sky-300 focus:ring-opacity-50 text-base md:text-lg"
           >
             Register Now
@@ -63,7 +63,7 @@ const HeroSection: FC = () => {
               </h1>
             </div>
             <div className='flex gap-8 justify-center text-center'>
-              <Link href={"/register"}
+              <Link href={"/dashboard"}
                 className="mt-10 px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 text-lg md:text-xl"
               >
                 Register Now

@@ -24,7 +24,7 @@ export const getEvents = async (userId: string) => {
   const userEventIds: string[] = [];
 
   if (userEvents) {
-    userEvents.registeredEvents.forEach((e) => {
+    userEvents.registeredEvents.sort((a,b)=>a.eventDate.getTime() - b.eventDate.getTime()).forEach((e) => {
       userEventIds.push(e.id);
       finalEvents.push({
         ...e,
@@ -33,7 +33,7 @@ export const getEvents = async (userId: string) => {
         registered: true,
       });
     });
-    allEvents.forEach(e => {
+    allEvents.sort((a,b)=>a.eventDate.getTime() - b.eventDate.getTime()).forEach(e => {
         if(!(userEventIds.includes(e.id))) finalEvents.push({
         ...e,
         eventDate: e.eventDate.toDateString(),
@@ -42,7 +42,7 @@ export const getEvents = async (userId: string) => {
       });
     })
   } else {
-    return allEvents.map(e => ({
+    return allEvents.sort((a,b)=>a.eventDate.getTime() - b.eventDate.getTime()).map(e => ({
         ...e,
         eventDate: e.eventDate.toDateString(),
         registrationsOpen: e.registrationsOpen,

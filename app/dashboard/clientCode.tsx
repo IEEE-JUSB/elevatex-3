@@ -121,7 +121,7 @@ function ClientCode({ user }:{user: UserType}) {
             registeredEvents.map((e) => (
               <div
                 key={e.id}
-                className="w-full grid grid-cols-2 place-items-center"
+                className="w-full grid grid-cols-2 place-items-center gap-x-3"
               >
                 {e.eventUrl ? (
                   <Link
@@ -150,7 +150,7 @@ function ClientCode({ user }:{user: UserType}) {
             upcomingEvents.map((e) => (
               <div
                 key={e.id}
-                className="w-full grid grid-cols-3 place-items-center"
+                className="w-full grid grid-cols-3 place-items-center gap-x-3"
               >
                 <p>{e.name}</p>
                 <p>{e.eventDate}</p>
