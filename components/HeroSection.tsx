@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, FC } from 'react';
 import { FaWhatsapp } from 'react-icons/fa6';
+import { CarouselPlugin } from './Carousel';
 
 type NavItem = string;
 
@@ -77,13 +78,14 @@ const HeroSection: FC = () => {
           </div>
           <div className="flex flex-col items-center lg:items-end mt-16 lg:mt-0">
             <div className="w-full max-w-sm sm:max-w-md bg-white rounded-[30px] shadow-2xl transition-all duration-500 ease-in-out transform hover:shadow-sky-300/50 overflow-hidden relative">
-              <Image
+              {/* <Image
                 src="/elevatex-logo-black.png"
                 alt="Business collaboration handshake"
                 width={400}
                 height={500}
                 className="w-full h-auto object-cover rounded-2xl shadow-sm"
-              />
+              /> */}
+              <CarouselPlugin />
               {/* <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-white bg-opacity-90 backdrop-blur-sm rounded-b-[30px] pt-12 -mt-6">
                 <p className="text-xl md:text-2xl font-bold text-gray-900 mb-1">Content Card</p>
                 <div className="flex items-center space-x-2">

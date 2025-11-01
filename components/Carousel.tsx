@@ -14,6 +14,15 @@ import {
 } from "@/components/ui/carousel"
 import Image from "next/image"
 
+const imageUrls = [
+  '/speakers/chirag.jpeg',
+  '/speakers/nandini.JPG',
+  '/speakers/rahul.jpeg',
+  '/speakers/raman.jpg',
+  '/speakers/sayandeep.jpeg',
+  '/speakers/soumyadeep.jpeg'
+]
+
 export function CarouselPlugin() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
@@ -27,17 +36,17 @@ export function CarouselPlugin() {
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {imageUrls.map((url, index) => (
           <CarouselItem key={index}>
             <div>
               <Card>
                 <CardContent>
                   <Image
-                    src="/elevatex-logo-black.png"
+                    src={url}
                     alt="Carousel Slides"
                     width={400}
                     height={500}
-                    className="w-full h-auto object-cover rounded-2xl shadow-sm"
+                    className="w-full h-auto object-cover aspect-3/4 rounded-2xl shadow-sm"
                 /> 
                 </CardContent>
               </Card>
