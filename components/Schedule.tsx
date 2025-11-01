@@ -5,8 +5,8 @@ const seminars = [
   { title: "Decoding CAT: the Top 0.1% Paradox Unmasked", img: "/speaker.png", speaker:"Soumyadeep Pal", date: "1/11/2025", timing: "7:00pm to 8:00pm" },
   { title: "CareerOS: Building Resume_Placement.exe", img: "/speaker.png", speaker:"Sayandeep Sarkar", date: "2/11/2025", timing: "7:30pm to 8:30pm" },
   { title: "The Big Data Equation: Thinking Beyond Spreadsheets", img: "/speaker.png", speaker:"Rahul Halder", date: "8/11/2025", timing: "7:00pm to 8:00pm" },
-  { title: "Foreign Education", img: "/speaker.png", speaker:"Nandini Bagga", date: "9/11/2025", timing: "7:00pm to 8:00pm" },
-  { title: "Open Source", img: "/speaker.png", speaker:"Chirag Agarwal", date: "15/11/2025", timing: "7:00pm to 8:00pm" },
+  { title: "Sakura Opportunities: Scholarships and SDEs in Japan", img: "/speaker.png", speaker:"Nandini Bagga", date: "9/11/2025", timing: "7:00pm to 8:00pm" },
+  { title: "Let's Git Going: Sneak Peek Into Open Source", img: "/speaker.png", speaker:"Chirag Agarwal", date: "15/11/2025", timing: "7:00pm to 8:00pm" },
 ];
 
 export default function Schedule() {
