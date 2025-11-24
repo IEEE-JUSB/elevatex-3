@@ -45,10 +45,10 @@ const HeroSection: FC = () => {
               </a>
             ))}
           </nav>
-          <Link href={"/dashboard"}
+          <Link href={"/"}
             className="px-6 py-2 bg-gray-900 text-white font-semibold rounded-xl shadow-lg hover:bg-sky-600 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-sky-300 focus:ring-opacity-50 text-base md:text-lg"
           >
-            Register Now
+            Registrations Closed
           </Link>
         </header>
         <main className="mt-16 md:mt-24 lg:mt-32 pb-20 grid lg:grid-cols-2 gap:10 lg:gap-140 items-center font-syne">
@@ -64,15 +64,10 @@ const HeroSection: FC = () => {
               </h1>
             </div>
             <div className='flex gap-8 justify-center text-center'>
-              <Link href={"/dashboard"}
+              <Link href={"/"}
                 className="mt-10 px-8 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 text-lg md:text-xl"
               >
-                Register Now
-              </Link>
-              <Link href="https://chat.whatsapp.com/J0LeXyC0eFGEe8S1cqsWI4?mode=wwt" target='blank' className="mt-10 px-5 py-3 bg-green-600 text-white font-semibold rounded-xl shadow-lg hover:bg-green-700 transition duration-300 ease-in-out transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-opacity-50 text-lg md:text-xl flex justify-center items-center gap-x-2">
-                {/* <img width="20" height="20" src="https://img.icons8.com/forma-regular/24/whatsapp.png" alt="whatsapp"/> */}
-                <FaWhatsapp className='size-8' />
-                WhatsApp Group
+                Registrations Closed
               </Link>
             </div>
           </div>
